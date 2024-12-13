@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "api-key-checker"
 version = "0.1.0"
 description = "Pre-commit hook to check for exposed API keys"
-authors = [{ name = "Your Name", email = "your.email@example.com" }]
+authors = [{ name = "Eric Ma", email = "ericmajinglong@gmail.com" }]
 dependencies = [
     "typer>=0.9.0",
     "pyyaml>=6.0",

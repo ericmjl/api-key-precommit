@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: api-key-checker
+        name: API Key Checker
+        entry: api-key-checker
+        language: python
+        types: [text]
+        args:
+          - "--pattern"
+          - "[a-zA-Z0-9]{32,}"
+          - "--pattern"
+          - "api[_-]key[_-][a-zA-Z0-9]{16,}"
+          - "--pattern"
+          - "^sk-proj-[A-Za-z0-9_-]+-rev[A-Za-z0-9_\\-\\.]+$"
