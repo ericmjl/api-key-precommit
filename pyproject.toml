@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "api-key-checker"
+version = "0.1.0"
+description = "Pre-commit hook to check for exposed API keys"
+authors = [{ name = "Your Name", email = "your.email@example.com" }]
+dependencies = [
+    "typer>=0.9.0",
+    "pyyaml>=6.0",
+    "loguru>=0.7.0",
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+api-key-checker = "api_key_checker.checker:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

@@ -1,0 +1,6 @@
+- id: api-key-checker
+  name: API Key Checker
+  description: Check for exposed API keys in files
+  entry: api-key-checker
+  language: python
+  types: [text]

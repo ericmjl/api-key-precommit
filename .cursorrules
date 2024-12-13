@@ -1,0 +1,44 @@
+# Design choices and conventions for the api-key-checker project
+
+code_organization:
+  - Use Typer for CLI interface to leverage type hints and automatic help generation
+  - Keep core functionality in APIKeyChecker class, separate from CLI handling
+  - Use pathlib.Path throughout for file handling
+  - Use loguru for logging instead of standard library logging
+
+type_hints:
+  - All function parameters and return values must be type-hinted
+  - Use Optional[] for optional parameters
+  - Use List[], Dict[] for collection types
+  - Use Pattern type from typing for compiled regex patterns
+
+configuration:
+  - Primary configuration through pre-commit-config.yaml using YAML block scalars
+  - Support both list and dict formats for pattern specification
+  - Maintain backward compatibility with --patterns CLI option
+  - Default to a sensible pattern if none specified
+
+error_handling:
+  - Skip binary files gracefully with warning message
+  - Return non-zero exit code if violations found
+  - Provide detailed error messages with file location and line numbers
+  - Use loguru.error() for violation reporting
+
+testing:
+  - Use pytest fixtures for temporary file handling
+  - Test both success and failure cases
+  - Test binary file handling
+  - Test all configuration methods
+  - Clean up temporary files in fixtures
+
+patterns:
+  - Store patterns as Dict[str, Pattern] for efficient reuse
+  - Compile patterns once at initialization
+  - Support multiple patterns per check
+  - Include pattern in violation messages for debugging
+
+pre_commit_integration:
+  - Run on text files only
+  - Support YAML block scalar syntax for better readability
+  - Allow inline comments in pattern definitions
+  - Keep configuration in pre-commit-config.yaml for simplicity
