@@ -77,7 +77,7 @@ When an API key is detected:
 
 MIT
 
-## Contributing
+## Contributingy
 
 1. Fork the repository
 2. Create a feature branch
