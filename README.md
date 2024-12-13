@@ -8,7 +8,7 @@ Add this to your `.pre-commit-config.yaml`:
 
 ```yaml
 repos:
-  - repo: https://github.com/yourusername/api-key-checker
+  - repo: https://github.com/ericmjl/api-key-precommit
     rev: v0.1.0  # Use the latest tag/release
     hooks:
       - id: api-key-checker
