@@ -20,3 +20,12 @@ api-key-checker = "api_key_checker.checker:app"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["api_key_checker"]
+
+[tool.hatch.build]
+packages = ["api_key_checker"]
+
+[tool.hatch.build.targets.sdist]
+packages = ["api_key_checker"]
